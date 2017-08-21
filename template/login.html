@@ -1,8 +1,6 @@
 <style type="text/css">
     .main-panel {
         position: relative;
-        float: right;
-        overflow: auto;
         width: 100%;
     }
 
@@ -12,19 +10,16 @@
         min-height: calc(100vh - 105px);
     }
 
-    .sidebar>ul,
-    .off-canvas-sidebar>ul {
-        position: relative;
-        z-index: 4;
-        overflow-y: hidden;
-        height: calc(100vh - 61px);
-        width: 100%;
+
+    body{
+        background: url(' assets/img/login.jpg ')  no-repeat center center fixed; background-size: cover; 
+        height: 100%
     }
 </style>
 
 
-<div class="wrapper" style="background: url(' assets/img/login.jpg ')  no-repeat center center fixed; background-size: cover; ">
-    <div class="full-page login-page" filter-color="black">
+<div class="wrapper">
+    <div class="login-page">
         <!--   you can change the color of the filter page using: data-color="blue | purple | green | orange | red | rose " -->
         <div class="content">
             <div class="container">
@@ -51,7 +46,7 @@
                                 <form id=""></form>
                                 <form id="FormLogin">
                                     <div class="card-content">
-                                    	<div class="input-group">
+                                        <div class="input-group">
                                             <span class="input-group-addon">
                                                 <i class="material-icons">email</i>
                                             </span>
@@ -65,12 +60,12 @@
                                             <span class="input-group-addon">
                                                 <i class="material-icons">lock_outline</i>
                                             </span>
-	                                        <div class="form-group label-floating">
-	                                            <label class="control-label">Senha</label>
-	                                            <input type="password" name="senha" class="form-control" ng-model="data.senha" required="true" />
-	                                        </div>
-	                                    </div>
-	                                    <br>
+                                            <div class="form-group label-floating">
+                                                <label class="control-label">Senha</label>
+                                                <input type="password" name="senha" class="form-control" ng-model="data.senha" required="true" />
+                                            </div>
+                                        </div>
+                                        <br>
 
                                         <div class="form-footer text-center">
                                         <button type="submit" class="btn btn-rose btn-wd btn-lg btn-block">Entrar</button>
