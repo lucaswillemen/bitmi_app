@@ -20,18 +20,21 @@
         height: calc(100vh - 61px);
         width: 100%;
     }
+    body{
+        background: url(' assets/img/login.jpg ')  no-repeat center center fixed; background-size: cover; 
+    }
 </style>
 
-<div class="wrapper" style="background: url(' assets/img/login.jpg ')  no-repeat center center fixed; background-size: cover; ">
+<div class="wrapper" style="">
         <div class="full-page register-page" filter-color="black" data-image="../../assets/img/register.jpg">
             <div class="container">
                 <div class="row">
                     <div class="col-md-10 col-md-offset-1">
-                        <div class="card card-signup card-hidden">
+                        <div class="card card-signup card-hidden ">
                             <h2 class="card-title text-center">Criar uma nova conta</h2>
                             <div class="row">
-                                <div class="col-md-5 col-md-offset-1">
-                                    <div class="card-content">
+                                <div class="col-md-5 col-md-offset-1" >
+                                    <div class="card-content visible-md visible-lg">
                                         <div class="info info-horizontal">
                                             <div class="icon icon-rose">
                                                 <i class="material-icons">timeline</i>
@@ -118,9 +121,11 @@
                                                     <a href="#something">terms and conditions</a>.
                                                 </label>
                                             </div>-->
-                                        </div>
+                                            <br><br>
                                         <div class="footer text-center">
-                                            <button type="submit" class="btn btn-rose btn-wd btn-lg btn-block">Vamos começar!</button>
+                                            <button type="submit" class="btn btn-primary btn-wd btn-lg btn-block">Vamos começar!</button>
+                                            <a ui-sref="login" class="btn btn-rose btn-wd btn-lg btn-block">Já tenho conta</a>
+                                        </div>
                                         </div>
                                     </form>
                                 </div>

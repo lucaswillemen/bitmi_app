@@ -1,4 +1,8 @@
-window.api = "https://bitmi.com.br/app/api/"
+if (window.mobile) {
+    window.api = "https://bitmi.com.br/app/api/"
+}else{
+    window.api = "api/"
+}
 window.version = 0.1
 var app = angular.module('App', ['ui.router', 'ngStorage']);
 

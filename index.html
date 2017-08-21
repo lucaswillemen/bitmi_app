@@ -1,5 +1,17 @@
 <!doctype html>
-
+<script type="text/javascript">
+window.mobile = true
+if (!window.mobile) {
+    if (window.location.href.split("/")[2] == "localhost") {
+      window.document.head.innerHTML = window.document.head.innerHTML + "<base href='/bitmi/app/' />";
+      window.facebook_id= '836611273093285'
+      console.log("Operando Local")
+    } else {
+      window.document.head.innerHTML = window.document.head.innerHTML + "<base href='/app/' />"
+      window.facebook_id= '122508055041252'
+    }
+}
+</script>
 <html lang="pt-br">
 <head>
     <meta charset="utf-8" />

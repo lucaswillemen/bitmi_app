@@ -1,5 +1,8 @@
 app.controller('menu', function($scope, $rootScope, $state, $http) {
 	(function(){
+           $("[ui-sref]").click(function(){
+                $('.navbar-toggle').click();
+            })
      isWindows = navigator.platform.indexOf('Win') > -1 ? true : false;
 
      if (isWindows && !$('body').hasClass('sidebar-mini')){

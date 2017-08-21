@@ -81,5 +81,8 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
             }
         })
         
-    $urlRouterProvider.otherwise("/home")
+    $urlRouterProvider.otherwise("/login")
+    if (!window.mobile) {
+        $locationProvider.html5Mode(true);
+    }
 })
