@@ -1,0 +1,45 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="green">
+                    <i class="material-icons">developer_board</i>
+                </div>
+                <div class="card-content">
+                    <p class="category">Capacidade de mineração</p>
+                    <h3 class="card-title">TH/s {{user_data.thash}}</h3>
+                </div>
+                <div class="card-footer text-right">
+                    <div class="stats">
+                        Saldo para compra {{user_data.usd | currency: "$ "}} USD
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6 col-sm-6">
+            <div class="card card-stats">
+                <div class="card-header" data-background-color="rose">
+                    <i class="material-icons">equalizer</i>
+                </div>
+                <div class="card-content">
+                    <p class="category">Estimativa anual na cotação atual</p>
+                    <h3 class="card-title">{{user_data.thash*0.0004*365*cota.BRL.last | currency: "R$ "}}</h3>
+                </div>
+                <div class="card-footer text-right">
+                    <div class="stats">
+                        Total dos rendimentos {{user_data.rend*cota.BRL.last | currency: "R$ "}} BRL
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-content">
+                    <canvas id="canvas" height="100%"></canvas>
+                </div>
+            </div>
+        </div>        
+    </div>
+</div>

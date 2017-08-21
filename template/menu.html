@@ -1,0 +1,73 @@
+<div class="sidebar" data-active-color="blue" data-background-color="black" data-image="assets/img/sidebar-1.jpg">
+
+    <div class="logo">
+        <a data-target="http://www.creative-tim.com/" class="simple-text">
+            <img src="assets/img/logo.png" width="48px">BitMi
+        </a>
+    </div>
+    <div class="logo logo-mini">
+        <a data-target="http://www.creative-tim.com/" class="simple-text">
+            CP
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <!--<div class="user">
+            <div class="photo">
+                <img src="assets/img/faces/avatar.jpg" />
+            </div>
+            <div class="info">
+                <a data-toggle="collapse" data-target="#collapseExample" class="collapsed">
+                    Tania Andrew
+                    <b class="caret"></b>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li>
+                            <a data-target="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a data-target="#">Edit Profile</a>
+                        </li>
+                        <li>
+                            <a data-target="#">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>-->
+        <ul class="nav">
+            <li ng-class="{active: menu=='home'}">
+                <a ui-sref="app.home">
+                    <i class="material-icons">dashboard</i>
+                    <p>Dashboard</p>
+                </a>
+            </li>
+            <li ng-class="{active: menu=='perfil'}">
+                <a ui-sref="app.perfil">
+                    <i class="material-icons">person</i>
+                    <p>Conta</p>
+                </a>
+            </li>
+            <li ng-class="{active: menu=='mining'}">
+                <a ui-sref="app.mining">
+                    <i class="material-icons">developer_board</i>
+                    <p>Mineração</p>
+                </a>
+            </li>
+            <li ng-class="{active: menu=='card'}">
+                <a ui-sref="app.card">
+                    <i class="material-icons">credit_card</i>
+                    <p>Cartões</p>
+                </a>
+            </li>
+            
+            <li >
+                <a ng-click="logout()">
+                    <i class="material-icons">close</i>
+                    <p>Sair</p>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+</div>

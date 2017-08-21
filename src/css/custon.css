@@ -1,0 +1,53 @@
+
+[ng-click],
+[data-ng-click],
+[data-target] {
+    cursor: pointer;
+}
+.loading{
+    position: fixed;
+    z-index: 9;
+    align-items: center;
+    width: 100%;
+    text-align: center;
+    background-color: #000000;
+    height: 100%;
+    padding-top: 6%;
+}
+.pulse-button {
+border-radius: 50%;
+box-shadow: 0 0 0 0 white;
+  -webkit-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -moz-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  -ms-animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+  animation: pulse 1.25s infinite cubic-bezier(0.66, 0, 0, 1);
+}
+
+@-webkit-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-moz-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@-ms-keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+@keyframes pulse {to {box-shadow: 0 0 0 45px rgba(232, 76, 61, 0);}}
+
+.sidebar .logo, .off-canvas-sidebar .logo {
+    position: relative;
+    padding: 8px 15px;
+    z-index: 4;
+}
+.navbar-collapse.collapse {
+    height: 100% !important;
+    z-index: 0;
+}
+.sidebar .sidebar-wrapper, .off-canvas-sidebar .sidebar-wrapper {
+    position: relative;
+    height: auto;
+    overflow: auto;
+    width: 260px;
+    z-index: 4;
+    padding-bottom: 30px;
+}
+@media (min-width: 992px){
+.sidebar-mini .sidebar, .sidebar-mini .main-panel {
+    overflow: visible;
+    max-height: none;
+    height: 100%;
+}}

@@ -1,0 +1,54 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6 col-md-offset-1">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">perm_identity</i>
+                </div>
+                <form>
+                    <div class="card-content">
+                        <h4 class="card-title">Atualizar dados da conta</h4><br>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Nome</label>
+                            <input type="text" ng-model="user_data.nome" class="form-control" required>                        
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Telefone</label>
+                            <input type="text" ng-model="user_data.telefone" class="form-control" required>
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Email</label>
+                            <input type="email" ng-model="user_data.email" class="form-control" required>                        
+                        </div>
+                        <button type="submit" class="btn btn-rose btn-block">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header card-header-icon" data-background-color="rose">
+                    <i class="material-icons">perm_identity</i>
+                </div>
+                <form>
+                    <div class="card-content">
+                        <h4 class="card-title">Atualizar Senha</h4><br>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Senha atual</label>
+                            <input type="text" class="form-control" required>                        
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Senha atual</label>
+                            <input type="text" class="form-control" required>
+                        </div>
+                        <div class="form-group label-floating is-empty">
+                            <label class="control-label">Senha atual</label>
+                            <input type="email" class="form-control" required>                        
+                        </div>
+                        <button type="submit" class="btn btn-rose btn-block">Salvar</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
