@@ -22,7 +22,7 @@
     <platform name="ios">
         <icon src="src/icons/ios/Icon-App-60x60@2x.png" platform="ios" width="60" height="60" />
         <icon src="src/icons/ios/Icon-App-60x60@2x.png" platform="ios" width="120" height="120" />
-        <icon src="src/icons/ios/iTunesArtwork@1x.png" platform="ios" width="152" height="152" />
+        <icon src="src/icons/ios/Icon-App-76x76@3x.png" platform="ios" width="152" height="152" />
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
