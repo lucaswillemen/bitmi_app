@@ -7,7 +7,7 @@
     <author email="contato@mitz.com.br" href="https://bitmi.com.br">
         Mitz Tecnology
     </author>
-    <icon src="assets/img/logo.png" />
+    <icon src="assets/img/logo.png" platform="android"/>
     <icon src="assets/img/logo.png" platform="ios" width="60" height="60" />
     <icon src="assets/img/logo.png" platform="ios" width="120" height="120" />
     <icon src="assets/img/logo.png" platform="ios" width="152" height="152" />
