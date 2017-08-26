@@ -50,10 +50,10 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
             $scope.myLine = new Chart(ctx, config);
         })
 
-
+console.log($rootScope.user_data)
     $('#modalBTC').on('shown.bs.modal', function() {
         function check() {
-            if ($rootScope.auth.address) {
+            if ($rootScope.user_data.address) {
                 $http.get(window.api + "bitcoin/check")
                     .then(function(res) {
                         $scope.addressData = res.data
@@ -77,7 +77,7 @@ app.controller('home', function($scope, $rootScope, $state, $http, $localStorage
         $scope.cnf.createAddress = $sce.trustAsHtml('<i class="fa fa-circle-o-notch fa-spin"></i>')
         $http.get(window.api + "bitcoin/create")
             .then(function(res) {
-                $scope.auth.address = res.data
+                $scope.user_data.address = res.data
             })
     }
     $scope.$on('$viewContentLoaded', function() {

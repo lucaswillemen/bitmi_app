@@ -75,7 +75,7 @@
         </div>        
     </div>
     <div class="row">
-        <div class="col-md-4">
+        <div class="col-md-12">
             <div class="card card-pricing card-raised">
                 <div class="content">
                     <h6 class="category">Investir em BitCoin</h6>
@@ -88,7 +88,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-4">
+        <!-- <div class="col-md-4">
             <div class="card card-pricing card-raised">
                 <div class="content">
                     <h6 class="category">Inserir cupom</h6>
@@ -113,7 +113,7 @@
                     <button class="btn btn-rose btn-round" data-toggle="modal" data-target="#modalCard">Abrir</button>
                 </div>
             </div>
-        </div>
+        </div> -->
     </div>
 </div>
 <div class="modal" id="modalBTC">
@@ -126,10 +126,10 @@
                 <h4 class="modal-title">Compra via BitCoin</h4>
             </div>
             <div class="modal-body">
-                <button ng-if="!auth.address" class="btn btn-rose btn-round btn-block" ng-click="getAddress(); disableThis=true" ng-bind-html="cnf.createAddress" ng-disabled="disableThis"></button>
-                <div class="text-center" ng-if="auth.address">
-                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{auth.address}}" height="250px">
-                    <h4 class="card-title  ng-binding" style="background-color: #00a0b4;padding: 12px;color: white;">{{auth.address}}</h4>
+                <button ng-if="!user_data.address" class="btn btn-rose btn-round btn-block" ng-click="getAddress(); disableThis=true" ng-bind-html="cnf.createAddress" ng-disabled="disableThis"></button>
+                <div class="text-center" ng-if="user_data.address">
+                    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data={{user_data.address}}" height="250px">
+                    <h4 class="card-title  ng-binding" style="background-color: #00a0b4;padding: 12px;color: white;">{{user_data.address}}</h4>
                     <ul class="timeline timeline-simple" ng-show="addressData">
                         <li class="timeline-inverted">
                             <div class="timeline-badge success">
