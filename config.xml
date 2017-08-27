@@ -8,7 +8,7 @@
         Mitz Tecnology
     </author>
     <content src="index.html" />
-    <splash src="assets/icons/512" />
+    <splash src="assets/icons/512.png" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
