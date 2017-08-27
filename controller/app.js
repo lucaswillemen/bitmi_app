@@ -15,9 +15,10 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
 
 
 	$rootScope.logout = function(){
+        $localStorage.$reset();
 		localStorage.clear()
         setTimeout(function() {
-            location.href = "#!login"
+            location.href = ""
         }, 100);
 	}
 

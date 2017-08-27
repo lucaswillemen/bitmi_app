@@ -17,7 +17,7 @@
     <allow-intent href="mailto:*" />
     <allow-intent href="geo:*" />
     <platform name="android">
-        <icon src="assets/icons/512.png" platform="android" width="512" height="512" />
+        <icon src="assets/icons/512.png"/>
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
