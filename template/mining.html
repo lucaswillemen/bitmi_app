@@ -23,11 +23,11 @@
                 </div>
                 <div class="card-content">
                     <p class="category">Estimativa anual na cotação atual</p>
-                    <h3 class="card-title">{{user_data.thash*0.0004*365*cota.BRL.last | currency: "R$ "}}</h3>
+                    <h3 class="card-title">{{user_data.thash*0.0004*365*cota.BRL.last*config.taxa | currency: "R$ "}}</h3>
                 </div>
                 <div class="card-footer text-right">
                     <div class="stats">
-                        Total dos rendimentos {{user_data.rend*cota.BRL.last | currency: "R$ "}} BRL
+                        Total dos rendimentos {{user_data.rend*cota.BRL.last*config.taxa | currency: "R$ "}} BRL
                     </div>
                 </div>
             </div>

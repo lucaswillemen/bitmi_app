@@ -15,11 +15,8 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
 
 
 	$rootScope.logout = function(){
-        $localStorage.$reset();
 		localStorage.clear()
-        setTimeout(function() {
-            location.href = ""
-        }, 100);
+		location.href = "#!login"
 	}
 
 
@@ -53,6 +50,15 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
         $rootScope.user_data = $localStorage.auth
 
     }
+
+    $rootScope.config = function() {
+    $http.get(window.api + "config/")
+        .then(function(res) {
+            console.log(res.data)
+            $scope.config = res.data
+        })
+    };
+    $scope.config()
 })
 
 
@@ -60,7 +66,7 @@ app.controller('Main', function($scope, $rootScope, $state, $localStorage, $http
 app.service('authInterceptor', function($q, $rootScope) {
     this.responseError = function(response) {
         if (response.status == 401){
-            $rootScope.logout();
+            //$rootScope.logout();
         }
         return $q.reject(response);
     };
