@@ -80,6 +80,15 @@ app.config(function($stateProvider, $urlRouterProvider, $locationProvider) {
                 }
             }
         })
+        .state('app.extrato', {
+            url: "/extrato",
+            views: {
+                "view": {
+                    templateUrl: "template/extrato.html?" + window.version,
+                    controller: "extrato"
+                }
+            }
+        })
         
     $urlRouterProvider.otherwise("/login")
     if (!window.mobile) {
