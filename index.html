@@ -1,85 +1,220 @@
 <!doctype html>
-<script type="text/javascript">
-window.mobile = true
-if (!window.mobile) {
-    if (window.location.href.split("/")[2] == "localhost") {
-      window.document.head.innerHTML = window.document.head.innerHTML + "<base href='/bitmi/app/' />";
-      window.facebook_id= '836611273093285'
-      console.log("Operando Local")
-    } else {
-      window.document.head.innerHTML = window.document.head.innerHTML + "<base href='/app/' />"
-      window.facebook_id= '122508055041252'
-    }
-}
-</script>
-<html lang="pt-br">
-<head>
-    <meta charset="utf-8" />
-    <link rel="apple-touch-icon" sizes="76x76" href="assets/img/logo.png?1" />
-    <link rel="icon" type="image/png" href="assets/img/favicon.png?1a" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <title>BitMi</title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-    
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" />
+<html lang="en">
 
-    <link rel="stylesheet" href="src/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="src/css/select2.css" />
-    <link rel="stylesheet" href="src/css/font-awesome.min.css" />
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="src/css/custon.css" />
+    <head>
 
-    <script type="text/javascript" src="src/angular/angular.min.js"></script>
-    <script type="text/javascript" src="src/angular/angular-ui-router.min.js"></script>
-    <script type="text/javascript" src="src/angular/angular-storage.js"></script>
+        <title>Bitmi</title>
+        <base href="/">
 
+        <meta charset="utf-8">
+        <meta name="google" content="notranslate">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-    <script type="text/javascript" src="controller/app.js"></script>
-    <script type="text/javascript" src="controller/state.js"></script>
-    <script type="text/javascript" src="controller/login.js"></script>
-    <script type="text/javascript" src="controller/cadastro.js"></script>
-    <script type="text/javascript" src="controller/menu.js"></script>
-    <script type="text/javascript" src="controller/home.js"></script>
-    <script type="text/javascript" src="controller/perfil.js"></script>
-    <script type="text/javascript" src="controller/card.js"></script>
-    <script type="text/javascript" src="controller/mining.js"></script>
-    <script type="text/javascript" src="controller/extrato.js"></script>
+        <meta name="theme-color" content="#f59d1d">
 
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <link href="assets/icons/meteocons/style.css" rel="stylesheet">
+        <link href="assets/icons/material-icons/outline/style.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Muli:300,400,600,700" rel="stylesheet">
 
+        <!-- FUSE Splash Screen CSS -->
+        <style type="text/css">
+            #fuse-splash-screen {
+                display: block;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background-color: #111;
+                z-index: 99999;
+                pointer-events: none;
+            }
 
-</head>
+            #fuse-splash-screen .center {
+                display: block;
+                width: 100%;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
 
-<body ng-app="App">
+            #fuse-splash-screen .logo {
+                width: 240px;
+                margin: 0 auto;
+            }
 
-    <div class="loading" style="z-index: 10000">
-        <img src="assets/img/logo.png?1"><br>
-        <h2>Loading...</h2>
-    </div>
-    <div class="wrapper">         
-        <ng-view ui-view="menu"></ng-view>
-        <div class="main-panel">          
-            <ng-view ui-view="header"  autoscroll="true"></ng-view>  
-            <div class="content">            
-                <ng-view ui-view="root"></ng-view>
+            #fuse-splash-screen .logo img {
+                filter: drop-shadow(0px 10px 6px rgba(0, 0, 0, 0.2))
+            }
+
+            #fuse-splash-screen .spinner-wrapper {
+                display: block;
+                position: relative;
+                width: 100%;
+                min-height: 100px;
+                height: 100px;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner {
+                position: absolute;
+                overflow: hidden;
+                left: 50%;
+                margin-left: -50px;
+                animation: outer-rotate 2.91667s linear infinite;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner {
+                width: 100px;
+                height: 100px;
+                position: relative;
+                animation: sporadic-rotate 5.25s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .gap {
+                position: absolute;
+                left: 49px;
+                right: 49px;
+                top: 0;
+                bottom: 0;
+                border-top: 10px solid;
+                box-sizing: border-box;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .left,
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .right {
+                position: absolute;
+                top: 0;
+                height: 100px;
+                width: 50px;
+                overflow: hidden;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .left .half-circle,
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+                position: absolute;
+                top: 0;
+                width: 100px;
+                height: 100px;
+                box-sizing: border-box;
+                border: 10px solid #4285F4;
+                border-bottom-color: transparent;
+                border-radius: 50%;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .left {
+                left: 0;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .left .half-circle {
+                left: 0;
+                border-right-color: transparent;
+                animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+                -webkit-animation: left-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .right {
+                right: 0;
+            }
+
+            #fuse-splash-screen .spinner-wrapper .spinner .inner .right .half-circle {
+                right: 0;
+                border-left-color: transparent;
+                animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+                -webkit-animation: right-wobble 1.3125s cubic-bezier(0.35, 0, 0.25, 1) infinite;
+            }
+
+            @keyframes outer-rotate {
+                0% {
+                    transform: rotate(0deg) scale(0.5);
+                }
+                100% {
+                    transform: rotate(360deg) scale(0.5);
+                }
+            }
+
+            @keyframes left-wobble {
+                0%, 100% {
+                    transform: rotate(130deg);
+                }
+                50% {
+                    transform: rotate(-5deg);
+                }
+            }
+
+            @keyframes right-wobble {
+                0%, 100% {
+                    transform: rotate(-130deg);
+                }
+                50% {
+                    transform: rotate(5deg);
+                }
+            }
+
+            @keyframes sporadic-rotate {
+                12.5% {
+                    transform: rotate(135deg);
+                }
+                25% {
+                    transform: rotate(270deg);
+                }
+                37.5% {
+                    transform: rotate(405deg);
+                }
+                50% {
+                    transform: rotate(540deg);
+                }
+                62.5% {
+                    transform: rotate(675deg);
+                }
+                75% {
+                    transform: rotate(810deg);
+                }
+                87.5% {
+                    transform: rotate(945deg);
+                }
+                100% {
+                    transform: rotate(1080deg);
+                }
+            }
+        </style>
+        <!-- / FUSE Splash Screen CSS -->
+    <link rel="stylesheet" href="styles.316bdf0f9443cc5029c6.css"></head>
+
+    <body>
+
+        <!-- FUSE Splash Screen -->
+        <fuse-splash-screen id="fuse-splash-screen">
+
+            <div class="center">
+
+                <div class="logo">
+                    <img src="assets/images/logos/logo.png">
+                </div>
+
+                <!-- Material Design Spinner -->
+                <div class="spinner-wrapper">
+                    <div class="spinner">
+                        <div class="inner">
+                            <div class="gap"></div>
+                            <div class="left">
+                                <div class="half-circle"></div>
+                            </div>
+                            <div class="right">
+                                <div class="half-circle"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- / Material Design Spinner -->
+
             </div>
-            <ng-view ui-view="footer"></ng-view>
-        </div>
-    </div>    
-</body>
-<!--   Core JS Files   -->
-<script src="src/jquery/jquery.js" type="text/javascript"></script>
-<script src="src/jquery/bootstrap.min.js" type="text/javascript"></script>
-<script src="src/jquery/material.min.js" type="text/javascript"></script>
-<script src="src/jquery/validation.js" type="text/javascript"></script>
-<script src="src/jquery/sweetalert.js" type="text/javascript"></script>
-<script src="src/jquery/mask.js" type="text/javascript"></script>
-<script src="src/jquery/select2.js" type="text/javascript"></script>
-<script src="src/jquery/custon.js" type="text/javascript"></script>
-<script src="src/jquery/perfect-scrollbar.jquery.min.js" type="text/javascript"></script>
-<script src="src/jquery/chart.js" type="text/javascript"></script>
-<script src="src/jquery/moment.js" type="text/javascript"></script>
 
+        </fuse-splash-screen>
+        <!-- / FUSE Splash Screen -->
 
+        <app></app>
+
+    <script src="runtime-es2015.edb2fcf2778e7bf1d426.js" type="module"></script><script src="runtime-es5.edb2fcf2778e7bf1d426.js" nomodule defer></script><script src="polyfills-es5.8d7c8d8a4bb1cb4962da.js" nomodule defer></script><script src="polyfills-es2015.7f4200423e6bf785eed1.js" type="module"></script><script src="main-es2015.d26c4c4f32db270bb2be.js" type="module"></script><script src="main-es5.d26c4c4f32db270bb2be.js" nomodule defer></script></body>
 
 </html>
