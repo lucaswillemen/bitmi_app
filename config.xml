@@ -10,7 +10,6 @@
         Mitz Tecnology
     </author>
     <content src="index.html" />
-    <splash src="assets/images/logos/icon.png" />
     <plugin name="cordova-plugin-whitelist" spec="1" />
     <access origin="*" />
     <allow-intent href="http://*/*" />
